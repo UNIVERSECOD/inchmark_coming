@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { FaWhatsapp, FaInstagram, FaLinkedin } from "react-icons/fa";
 
-import Logo from "../assets/Inchmark_logo.png";
-import BgPhoto from "../assets/megaphone_bg.jpg";
+import Logo from "../assets/inchmark_logo_ph.png";
+import BgPhoto from "../assets/inchmark_bg.png";
 
 const TOTAL_SECONDS = 20 * 24 * 60 * 60;
 
@@ -30,37 +30,52 @@ const ComingSoon: React.FC = () => {
       />
 
       {/* OVERLAY */}
-      <div className="absolute inset-0 bg-gradient-to-l from-teal-950/60 via-teal-900/20 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-l from-teal-950/60 via-slate-700/10 to-transparent" />
 
       {/* CONTENT */}
-      <section className="relative z-10 min-h-screen flex items-center px-6 lg:px-16">
-        <div className="w-full max-w-[1400px] mx-auto flex justify-end">
+      <section className="relative z-10 min-h-screen flex items-center px-4 sm:px-6 lg:px-16">
+        <div className="w-full max-w-350 mx-auto flex justify-center lg:justify-end">
           
-          {/* RIGHT CONTENT BLOCK */}
-          <div className="text-white max-w-xl ">
-            {/* LOGO */}
-            <img
-              src={Logo}
-              alt="Inchmark"
-              className="h-100 mb-10 opacity-95"
-            />
+          {/* CONTENT BLOCK */}
+          <div
+            className="
+              text-white max-w-3xl
+              p-6
+              bg-teal-600/20 backdrop-blur-lg
+              rounded-3xl
+              text-center
 
-            {/* TITLE */}
-            <h1 className="text-5xl lg:text-8xl font-extrabold leading-tight text-right">
-              INCHMARK
-              <span className="block text-teal-300 mt-2">
-                is coming
+              lg:bg-transparent
+              
+              lg:p-0
+              lg:text-right
+            "
+          >
+            {/* BRAND */}
+            <div className="flex flex-col items-center lg:items-end mb-6">
+              <img
+                src={Logo}
+                alt="Inchmark Logo"
+                className="h-60 mb-4 opacity-95 transition hover:scale-105 lg:h-80"
+              />
+
+              <h1 className="text-6xl font-mono font-extrabold leading-tight lg:text-8xl">
+                INCHMARK
+              </h1>
+
+              <span className="text-5xl font-body font-extrabold text-teal-900 mt-2 lg:text-6xl lg:text-teal-700">
+                tezliklə xidmətinizdə
               </span>
-            </h1>
+            </div>
 
             {/* DESCRIPTION */}
-            <p className="mt-6 text-lg text-white/90 leading-relaxed text-right">
+            <p className="mt-4 font-body text-white/80 leading-relaxed text-2xl text-center lg:mt-6 lg:text-3xl lg:text-right">
               Təhlükəsizlik sistemləri və IT həllərini bir platformada
-              birləşdirən Inchmark çox yaxında istifadəyə veriləcək.
+              birləşdirən Inchmark tezliklə istifadəyə veriləcək.
             </p>
 
             {/* COUNTDOWN */}
-            <div className="mt-12 flex flex-wrap gap-4 justify-end">
+            <div className="mt-8 flex flex-wrap gap-4 justify-center lg:mt-12 lg:justify-end">
               {[
                 { label: "DAYS", value: days },
                 { label: "HOURS", value: hours },
@@ -69,14 +84,9 @@ const ComingSoon: React.FC = () => {
               ].map((item) => (
                 <div
                   key={item.label}
-                  className="
-                    bg-black/40 backdrop-blur-lg
-                    rounded-2xl px-6 py-4
-                    text-center
-                    hover:bg-black/60 transition
-                  "
+                  className="bg-black/40 backdrop-blur-lg rounded-2xl px-5 py-4 text-center hover:bg-black/60 transition"
                 >
-                  <div className="text-7xl font-mono font-bold">
+                  <div className="text-3xl font-mono font-bold lg:text-7xl">
                     {item.value}
                   </div>
                   <div className="text-xs tracking-widest opacity-80">
@@ -87,32 +97,35 @@ const ComingSoon: React.FC = () => {
             </div>
 
             {/* SOCIALS */}
-            <div className="flex gap-4 mt-10 justify-end">
+            <div className="flex gap-4 mt-8 justify-center lg:mt-10 lg:justify-end">
               <a
                 href="https://instagram.com/inchmark_az"
                 target="_blank"
-                rel="noreferrer"
-                className="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 hover:scale-110 transition"
+                rel="noopener"
+                title="Instagram"
+                className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 hover:scale-110 transition lg:w-20 lg:h-20"
               >
-                <FaInstagram className="w-7 h-7" />
+                <FaInstagram className="w-6 h-6 lg:w-8 lg:h-8" />
               </a>
 
               <a
-                href="https://www.linkedin.com/company/inchmark-az"
+                href="https://www.linkedin.com/in/inchmark-az-158495389"
                 target="_blank"
-                rel="noreferrer"
-                className="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 hover:scale-110 transition"
+                rel="noopener"
+                title="LinkedIn"
+                className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 hover:scale-110 transition lg:w-20 lg:h-20"
               >
-                <FaLinkedin className="w-7 h-7" />
+                <FaLinkedin className="w-6 h-6 lg:w-8 lg:h-8" />
               </a>
 
               <a
-                href="https://wa.me/994992223313"
+                href="https://wa.me/994992223303"
                 target="_blank"
-                rel="noreferrer"
-                className="w-20 h-20 rounded-full bg-green-500 flex items-center justify-center hover:bg-green-600 hover:scale-110 transition"
+                rel="noopener"
+                title="WhatsApp"
+                className="w-14 h-14 rounded-full bg-green-500 flex items-center justify-center hover:bg-green-600 hover:scale-110 transition lg:w-20 lg:h-20"
               >
-                <FaWhatsapp className="w-7 h-7" />
+                <FaWhatsapp className="w-6 h-6 lg:w-8 lg:h-8" />
               </a>
             </div>
           </div>
