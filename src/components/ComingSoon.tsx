@@ -56,7 +56,7 @@ const ComingSoon: React.FC = () => {
               <img
                 src={Logo}
                 alt="Inchmark Logo"
-                className="h-40 mb-4 opacity-95 transition hover:scale-105 lg:h-60"
+                className="h-30 mb-4 opacity-95 transition hover:scale-105 lg:h-50"
               />
 
               <h1 className="text-5xl font-mono font-extrabold leading-tight lg:text-7xl">
@@ -86,7 +86,7 @@ const ComingSoon: React.FC = () => {
                   key={item.label}
                   className="bg-black/40 backdrop-blur-lg rounded-2xl px-5 py-4 text-center hover:bg-black/60 transition"
                 >
-                  <div className="text-3xl font-mono font-bold lg:text-5xl">
+                  <div className="text-2xl font-mono font-bold lg:text-4xl">
                     {item.value}
                   </div>
                   <div className="text-xs tracking-widest opacity-80">
@@ -103,9 +103,9 @@ const ComingSoon: React.FC = () => {
                 target="_blank"
                 rel="noopener"
                 title="Instagram"
-                className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 hover:scale-110 transition lg:w-18 lg:h-18"
+                className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 hover:scale-110 transition lg:w-14 lg:h-14"
               >
-                <FaInstagram className="w-6 h-6 lg:w-8 lg:h-8" />
+                <FaInstagram className="w-3 h-3 lg:w-6 lg:h-6" />
               </a>
 
               <a
@@ -113,9 +113,9 @@ const ComingSoon: React.FC = () => {
                 target="_blank"
                 rel="noopener"
                 title="LinkedIn"
-                className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 hover:scale-110 transition lg:w-18 lg:h-18"
+                className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 hover:scale-110 transition lg:w-14 lg:h-14"
               >
-                <FaLinkedin className="w-6 h-6 lg:w-8 lg:h-8" />
+                <FaLinkedin className="w-3 h-3 lg:w-6 lg:h-6" />
               </a>
 
               <a
@@ -123,9 +123,9 @@ const ComingSoon: React.FC = () => {
                 target="_blank"
                 rel="noopener"
                 title="WhatsApp"
-                className="w-14 h-14 rounded-full bg-green-500 flex items-center justify-center hover:bg-green-600 hover:scale-110 transition lg:w-18 lg:h-18"
+                className="w-9 h-9 rounded-full bg-green-500 flex items-center justify-center hover:bg-green-600 hover:scale-110 transition lg:w-14 lg:h-14"
               >
-                <FaWhatsapp className="w-6 h-6 lg:w-8 lg:h-8" />
+                <FaWhatsapp className="w-3 h-3 lg:w-6 lg:h-6" />
               </a>
             </div>
           </div>
