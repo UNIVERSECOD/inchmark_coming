@@ -7,19 +7,45 @@ import BgPhoto from "../assets/inchmark_bg.png";
 const TOTAL_SECONDS = 20 * 24 * 60 * 60;
 
 const ComingSoon: React.FC = () => {
-  const [timeLeft, setTimeLeft] = useState(TOTAL_SECONDS);
+  const TOTAL_DAYS = 20;
+const STORAGE_KEY = "inchmark_launch_date";
+const [timeLeft, setTimeLeft] = useState(0);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft((prev) => (prev <= 1 ? TOTAL_SECONDS : prev - 1));
-    }, 1000);
-    return () => clearInterval(timer);
-  }, []);
+useEffect(() => {
+  let targetTime = localStorage.getItem(STORAGE_KEY);
 
-  const days = Math.floor(timeLeft / 86400);
-  const hours = Math.floor((timeLeft % 86400) / 3600);
-  const minutes = Math.floor((timeLeft % 3600) / 60);
-  const seconds = timeLeft % 60;
+  if (!targetTime) {
+    const now = Date.now();
+    const launchTime = now + TOTAL_DAYS * 24 * 60 * 60 * 1000;
+    localStorage.setItem(STORAGE_KEY, launchTime.toString());
+    targetTime = launchTime.toString();
+  }
+
+  const updateTimer = () => {
+    const now = Date.now();
+    const diff = Math.floor((Number(targetTime) - now) / 1000);
+
+    if (diff <= 0) {
+      // 20 gün bitəndə yenidən başlasın
+      const newLaunch = Date.now() + TOTAL_DAYS * 24 * 60 * 60 * 1000;
+      localStorage.setItem(STORAGE_KEY, newLaunch.toString());
+      setTimeLeft(TOTAL_DAYS * 24 * 60 * 60);
+    } else {
+      setTimeLeft(diff);
+    }
+  };
+
+  updateTimer();
+  const interval = setInterval(updateTimer, 1000);
+
+  return () => clearInterval(interval);
+}, []);
+
+
+const days = Math.floor(timeLeft / 86400);
+const hours = Math.floor((timeLeft % 86400) / 3600);
+const minutes = Math.floor((timeLeft % 3600) / 60);
+const seconds = timeLeft % 60;
 
   return (
     <main className="relative min-h-screen overflow-hidden">
