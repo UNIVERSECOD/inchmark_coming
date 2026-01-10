@@ -7,32 +7,26 @@ import BgPhoto from "../assets/inchmark_bg.png";
 const TOTAL_SECONDS = 20 * 24 * 60 * 60;
 
 const ComingSoon: React.FC = () => {
-  const TOTAL_DAYS = 20;
-const STORAGE_KEY = "inchmark_launch_date";
-const [timeLeft, setTimeLeft] = useState(0);
+ const [timeLeft, setTimeLeft] = useState(0);
+const getEndOfMonth = () => {
+  const now = new Date();
+  return new Date(
+    now.getFullYear(),
+    now.getMonth() + 1,
+    31,
+    23,
+    59,
+    59
+  );
+};
 
 useEffect(() => {
-  let targetTime = localStorage.getItem(STORAGE_KEY);
-
-  if (!targetTime) {
-    const now = Date.now();
-    const launchTime = now + TOTAL_DAYS * 24 * 60 * 60 * 1000;
-    localStorage.setItem(STORAGE_KEY, launchTime.toString());
-    targetTime = launchTime.toString();
-  }
+  const targetDate = getEndOfMonth();
 
   const updateTimer = () => {
     const now = Date.now();
-    const diff = Math.floor((Number(targetTime) - now) / 1000);
-
-    if (diff <= 0) {
-      // 20 gün bitəndə yenidən başlasın
-      const newLaunch = Date.now() + TOTAL_DAYS * 24 * 60 * 60 * 1000;
-      localStorage.setItem(STORAGE_KEY, newLaunch.toString());
-      setTimeLeft(TOTAL_DAYS * 24 * 60 * 60);
-    } else {
-      setTimeLeft(diff);
-    }
+    const diff = Math.floor((targetDate.getTime() - now) / 1000);
+    setTimeLeft(diff > 0 ? diff : 0);
   };
 
   updateTimer();
