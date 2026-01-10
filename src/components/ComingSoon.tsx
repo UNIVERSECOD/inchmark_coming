@@ -108,7 +108,7 @@ const seconds = timeLeft % 60;
                   key={item.label}
                   className="bg-black/40 backdrop-blur-lg rounded-2xl px-5 py-4 text-center hover:bg-black/60 transition"
                 >
-                  <div className="text-2xl font-mono font-bold lg:text-4xl">
+                  <div className="text-xl font-mono font-bold lg:text-4xl">
                     {item.value}
                   </div>
                   <div className="text-xs tracking-widest opacity-80">
