@@ -4,15 +4,13 @@ import { FaWhatsapp, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Logo from "../assets/inchmark_logo_ph.png";
 import BgPhoto from "../assets/inchmark_bg.png";
 
-const TOTAL_SECONDS = 20 * 24 * 60 * 60;
-
 const ComingSoon: React.FC = () => {
  const [timeLeft, setTimeLeft] = useState(0);
 const getEndOfMonth = () => {
   const now = new Date();
   return new Date(
     now.getFullYear(),
-    now.getMonth() + 1,
+    now.getMonth(),
     31,
     23,
     59,
@@ -35,6 +33,10 @@ useEffect(() => {
   return () => clearInterval(interval);
 }, []);
 
+useEffect(() => {
+  console.log("EFFECT START");
+  return () => console.log("CLEANUP");
+}, []);
 
 const days = Math.floor(timeLeft / 86400);
 const hours = Math.floor((timeLeft % 86400) / 3600);
