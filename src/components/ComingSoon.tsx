@@ -56,20 +56,20 @@ const ComingSoon: React.FC = () => {
               <img
                 src={Logo}
                 alt="Inchmark Logo"
-                className="h-60 mb-4 opacity-95 transition hover:scale-105 lg:h-80"
+                className="h-40 mb-4 opacity-95 transition hover:scale-105 lg:h-60"
               />
 
-              <h1 className="text-6xl font-mono font-extrabold leading-tight lg:text-8xl">
+              <h1 className="text-5xl font-mono font-extrabold leading-tight lg:text-7xl">
                 INCHMARK
               </h1>
 
-              <span className="text-5xl font-body font-extrabold text-teal-900 mt-2 lg:text-6xl lg:text-teal-700">
+              <span className="text-3xl font-body font-extrabold text-teal-900 mt-2 lg:text-5xl lg:text-teal-700">
                 tezliklə xidmətinizdə
               </span>
             </div>
 
             {/* DESCRIPTION */}
-            <p className="mt-4 font-body text-white/80 leading-relaxed text-2xl text-center lg:mt-6 lg:text-3xl lg:text-right">
+            <p className="mt-4 font-body text-white/80 leading-relaxed text-lg text-center lg:mt-6 lg:text-xl lg:text-right">
               Təhlükəsizlik sistemləri və IT həllərini bir platformada
               birləşdirən Inchmark tezliklə istifadəyə veriləcək.
             </p>
@@ -86,7 +86,7 @@ const ComingSoon: React.FC = () => {
                   key={item.label}
                   className="bg-black/40 backdrop-blur-lg rounded-2xl px-5 py-4 text-center hover:bg-black/60 transition"
                 >
-                  <div className="text-3xl font-mono font-bold lg:text-7xl">
+                  <div className="text-3xl font-mono font-bold lg:text-5xl">
                     {item.value}
                   </div>
                   <div className="text-xs tracking-widest opacity-80">
@@ -103,7 +103,7 @@ const ComingSoon: React.FC = () => {
                 target="_blank"
                 rel="noopener"
                 title="Instagram"
-                className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 hover:scale-110 transition lg:w-20 lg:h-20"
+                className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 hover:scale-110 transition lg:w-18 lg:h-18"
               >
                 <FaInstagram className="w-6 h-6 lg:w-8 lg:h-8" />
               </a>
@@ -113,7 +113,7 @@ const ComingSoon: React.FC = () => {
                 target="_blank"
                 rel="noopener"
                 title="LinkedIn"
-                className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 hover:scale-110 transition lg:w-20 lg:h-20"
+                className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 hover:scale-110 transition lg:w-18 lg:h-18"
               >
                 <FaLinkedin className="w-6 h-6 lg:w-8 lg:h-8" />
               </a>
@@ -123,7 +123,7 @@ const ComingSoon: React.FC = () => {
                 target="_blank"
                 rel="noopener"
                 title="WhatsApp"
-                className="w-14 h-14 rounded-full bg-green-500 flex items-center justify-center hover:bg-green-600 hover:scale-110 transition lg:w-20 lg:h-20"
+                className="w-14 h-14 rounded-full bg-green-500 flex items-center justify-center hover:bg-green-600 hover:scale-110 transition lg:w-18 lg:h-18"
               >
                 <FaWhatsapp className="w-6 h-6 lg:w-8 lg:h-8" />
               </a>
